@@ -9,7 +9,7 @@
 
 [Jinjie Ni†](https://jinjieni.github.io/), [Qian Liu](https://scholar.google.com/citations?user=bcbeUo0AAAAJ&hl=en), [Chao Du](https://duchao0726.github.io/), [Longxu Dou](https://longxudou.github.io/), [Hang Yan](https://scholar.google.com/citations?user=yigHzW8AAAAJ&hl=en), [Zili Wang](https://commencement.github.io/), [Tianyu Pang](https://p2333.github.io/), [Michael Qizhe Shieh](https://michaelshieh.com/)
 
-†Correspondence to: Jinjie Ni \<jinjieni@nus.edu.sg>
+†Correspondence to: Jinjie Ni \<jinjieni@nus.edu.sg\>
 </div>
 
 <p align="center" width="100%">
