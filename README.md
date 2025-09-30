@@ -16,7 +16,7 @@
 <img src="resources/imgs/compute_constrained_allocations_ar_and_dlm.png"  width="80%" height="100%">
 </p>
 
-**Overlaid predictions from Chinchilla and Quokka.** *We overlay the predictions from our approach 1 and 2, along with those from \citep{hoffmann2022training}. Though scaling at the same pace, DLMs are \emph{2--5}$\times$ more data-hungry than AR models at the same FLOPs—favor smaller models and larger corpora. We mark the position of LLaDA \citep{nie2025large} in the same space, finding that it's severely over-trained with 2$\times$ smaller models and 2$\times$ more corpora against the Quokka efficient frontier. Meanwhile, wo show the positions of opensource models, finding that most models are over-trained compared with the Chinchilla efficient frontier, except some models from the Llama family.*
+**Overlaid predictions from Chinchilla and Quokka (compute-constrained).** *We overlay the predictions from our approach 1 and 2, along with those from Chinchilla. Though scaling at the same pace, DLMs are 2-5x more data-hungry than AR models at the same FLOPs—favor smaller models and larger corpora. We mark the position of LLaDA in the same space, finding that it's severely over-trained with 2$\times$ smaller models and 2x more corpora against the Quokka efficient frontier. Meanwhile, wo show the positions of opensource models, finding that most models are over-trained compared with the Chinchilla efficient frontier, except some models from the Llama family.*
 
 <br>
 
