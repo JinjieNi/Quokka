@@ -3,7 +3,7 @@
 <!-- TITLE -->
 # **Training Optimal Large Diffusion Language Models**
 
-[![Static Badge](https://img.shields.io/badge/Paper-2025--09--30-darkcyan)]()
+[![Static Badge](https://img.shields.io/badge/Paper-2025--09--30-darkcyan)](https://jinjieni.github.io/Quokka/resources/pdfs/Training_Optimal_Large_Diffusion_Language_Models.pdf)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)]()
 
 
