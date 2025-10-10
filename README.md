@@ -43,10 +43,10 @@
 
 # Citation
 ```
-@article{ni2025quokka,
+@article{ni2025training,
   title={Training Optimal Large Diffusion Language Models},
   author={Ni, Jinjie and Liu, Qian and Du, Chao and Dou, Longxu and Yan, Hang and Wang, Zili and Pang, Tianyu and Shieh, Michael Qizhe},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2510.03280},
   year={2025}
 }
 ```
