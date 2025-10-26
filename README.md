@@ -1,7 +1,14 @@
 <div align="center">
 
 <!-- TITLE -->
-# **Training Optimal Large Diffusion Language Models**
+<p align="center" width="100%">
+<img src="resources/imgs/compute_constrained_allocations_ar_and_dlm.png"  width="80%" height="100%">
+</p>
+
+**Training Optimal Large Diffusion Language Models**
+===========================
+
+<h4>Large-Scale Scaling Laws for Diffusion Language Models.</h4>
 
 [![Static Badge](https://img.shields.io/badge/Paper-2025--09--30-darkcyan)](https://jinjieni.github.io/Quokka/resources/pdfs/Training_Optimal_Large_Diffusion_Language_Models.pdf)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973031493707645146)
@@ -12,32 +19,86 @@
 †Correspondence to: Jinjie Ni \<jinjieni@nus.edu.sg\>
 </div>
 
-<p align="center" width="100%">
-<img src="resources/imgs/compute_constrained_allocations_ar_and_dlm.png"  width="80%" height="100%">
-</p>
+# News
+[2025-10-27] We release the codebase and all training checkpoints. The codebase is highly optimized and is industry-level in terms scalability and efficiency.
 
-**Overlaid predictions from Chinchilla and Quokka (compute-constrained).** *We overlay the predictions from our approach 1 and 2, along with those from Chinchilla. Though scaling at the same pace, DLMs are 2-5x more data-hungry than AR models at the same FLOPs—favor smaller models and larger corpora. We mark the position of LLaDA in the same space, finding that it's severely over-trained with 2$\times$ smaller models and 2x more corpora against the Quokka efficient frontier. Meanwhile, wo show the positions of opensource models, finding that most models are over-trained compared with the Chinchilla efficient frontier, except some models from the Llama family.*
+[2025-10-03] The full paper is out! Check it out [here](https://jinjieni.github.io/Quokka/resources/pdfs/Training_Optimal_Large_Diffusion_Language_Models.pdf)!
+
 
 <br>
 
-# Highlights
-**We introduce Quokka, the first systematic scaling law for diffusion language models (DLMs), encompassing both compute-constrained and data-constrained regimes, and studying the key modeling and optimization designs. Quokka is a good friend of Chinchilla and provides wider scopes. We hope the results would bring short-term practical guidance in DLMs training and long-term inspirations for the whole AI community. We summarize some takeaways below:**
+# Code
+The codebase is released [here](https://github.com/JinjieNi/MegaDLMs). It is a highly-optimized codebase for any-scale DLMs training backend with Megatron-LM.
 
-- **Compute-constrained law.** With fixed FLOPs $C$, the optimal parameters $N_{\mathrm{opt}}\propto C^{0.5}$ and data size $D_{\mathrm{opt}}\propto C^{0.5}$, scaling at the same pace; DLMs are *2-5*$\times$ more data-hungry than autoregressive (AR) models at the same $C$—favor smaller models and larger corpora (Figure 1). We provide a direct comparison with Chinchilla scaling law coefficients in Table 1 and their practical optimal allocation comparisons in Table 2 of the paper.
+> You can also use the code under the `mega-dlms` folder of this repo, which might not be actively maintained.
 
-- **Data-constrained law.** Validation loss is U-shaped in epochs $e$; the onset of overfitting scales roughly as $e_{\mathrm{opt}}\!\propto\!U_D^{0.39}/N^{0.55}$, where $N$ is the model size and $U_D$ is the unique data size; e.g., a 10B model on $1$T unique tokens tolerates ~1,100 epochs before degradation. We provide practical allocation guidance in Table 3.
+<br>
 
-- **Joint allocation under data constraints.** For a larger unique data size $U_D$, the optimal parameter-epoch allocation uses *modestly larger* $N$ and *more* epochs–both $N_{\mathrm{opt}}$ and $e_{\mathrm{opt}}$ increase with $U_D$. We provide practical allocation guidance in Table 4.
+# Resources
 
-- **Masked outperforms uniform diffusion at scale.** Absorbing-mask transitions consistently outperform uniform ones on pretrain loss and downstream metrics (§ 5.1).
+We opensource all model checkpoints, training logs, and datasets mentioned in the paper. All of them can be downloaded at https://huggingface.co/collections/jinjieni/mdga.
 
-- **Schedules and curricula.** A linear $\alpha_t$ schedule is strongest in most cases and most stable; poly2 performs better on some benchmarks; an easy to hard noise curriculum (clean-to-noisy $t$ sampling) accelerates early learning and yields small end-of-training gains (§ 5.2).
+The easiest way to download a folder is using this script (setup the variables properly):
+```
+python utils/hf_download_folder.py
+```
 
-- **Losses.** MaskGIT loss (no importance sampling) converges faster initially, but the principled diffusion ELBO attains better final performance (§ 5.3).
+Alternatively, you can also use `wget` to directly download individual files from the folder, e.g.:
+```bash
+wget https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size1/1024_96b_1e_1b_ar/tensorboard/events.out.tfevents.1756378168.7837477398
+```
 
-- **Hyperparameters transfer.** Batch-size and learning-rate laws from AR models can be carried over for DLM training (§ 5.4).
+We link the related resources below:
 
-- **Weight decay.** Little benefit at one epoch, but useful in long multi-epoch runs and for controlling parameter norms (stability in `bf16`); keep WD when repeating data heavily (§ 5.5).
+- [[ckpt]()][[log]()] Compute-constrained scaling laws
+- [[ckpt]()][[log]()] Data-constrained scaling laws
+- Key Modeling and Optimization Choices
+  - Masked and uniform transition kernels
+    - [[ckpt]()][[log]()] masked
+    - [[ckpt]()][[log]()] uniform
+  - diffusion schedules
+    - [[ckpt]()][[log]()] cosine
+    - [[ckpt]()][[log]()] linear
+    - [[ckpt]()][[log]()] poly2
+  - Uniform 𝑡 vs. clean-to-noisy 𝑡 sampling
+    - [[ckpt]()][[log]()] default
+    - [[ckpt]()][[log]()] moving gaussian
+  - Principled diffusion loss and MaskGIT loss
+    - [[ckpt]()][[log]()] diffusion
+    - [[ckpt]()][[log]()] maskgit
+  - Batch size transferability from AR models to DLMs
+    - 256
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+    - 1024
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+    - 4096
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+  - Learning rate transferability from AR models to DLMs
+    - 1e-4
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+    - 2e-4
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+    - 4e-4
+      - [[ckpt]()][[log]()] AR
+      - [[ckpt]()][[log]()] DLM
+  - The impact of weight decay on AR models in single epoch scenarios
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+  - The impact of weight decay on DLMs in single epoch scenarios
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+  - The impact of weight decay on AR models in multi-epoch scenarios
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+  - The impact of weight decay on DLMs in multi-epoch scenarios
+    - [[ckpt]()][[log]()] with
+    - [[ckpt]()][[log]()] without
+
 
 <br>
 
