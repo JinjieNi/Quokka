@@ -20,7 +20,7 @@
 </div>
 
 # News
-[2025-10-27] We release the codebase and all training checkpoints. The codebase is highly optimized and is industry-level in terms scalability and efficiency.
+[2025-10-27] We release the codebase, all training checkpoints, and logs. The codebase is highly optimized and is industry-level in terms scalability and efficiency.
 
 [2025-10-03] The full paper is out! Check it out [here](https://jinjieni.github.io/Quokka/resources/pdfs/Training_Optimal_Large_Diffusion_Language_Models.pdf)!
 
@@ -28,7 +28,7 @@
 <br>
 
 # Code
-The codebase is released [here](https://github.com/JinjieNi/MegaDLMs). It is a highly-optimized codebase for any-scale DLMs training backend with Megatron-LM.
+The codebase is released [here](https://github.com/JinjieNi/MegaDLMs). It is a highly-optimized codebase for any-scale DLMs training.
 
 > You can also use the code under the `mega-dlms` folder of this repo, which might not be actively maintained.
 
