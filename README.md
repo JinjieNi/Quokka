@@ -52,54 +52,54 @@ wget https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size1/10
 
 We link the related resources below:
 
-- [[ckpt]()][[log]()] Compute-constrained scaling laws
-- [[ckpt]()][[log]()] Data-constrained scaling laws
+- [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/compute_constrained_scaling_law)] Compute-constrained scaling laws
+- [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/data_constrained_scaling_law)] Data-constrained scaling laws
 - Key Modeling and Optimization Choices
   - Masked and uniform transition kernels
-    - [[ckpt]()][[log]()] masked
-    - [[ckpt]()][[log]()] uniform
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/mask_vs_uniform/masked_96b_1e_1b_difflm)] masked
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/mask_vs_uniform/uniform_96b_1e_1b_difflm)] uniform
   - diffusion schedules
-    - [[ckpt]()][[log]()] cosine
-    - [[ckpt]()][[log]()] linear
-    - [[ckpt]()][[log]()] poly2
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_schedule1/Cosine_96b_1e_1b_difflm)] cosine
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_schedule1/Linear_96b_1e_1b_difflm)] linear
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_schedule1/Poly2_96b_1e_1b_difflm)] poly2
   - Uniform 𝑡 vs. clean-to-noisy 𝑡 sampling
-    - [[ckpt]()][[log]()] default
-    - [[ckpt]()][[log]()] moving gaussian
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_schedule2/Default_96b_1e_1b_difflm)] default
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_schedule2/Moving-Gaussian_96b_1e_1b_difflm)] moving gaussian
   - Principled diffusion loss and MaskGIT loss
-    - [[ckpt]()][[log]()] diffusion
-    - [[ckpt]()][[log]()] maskgit
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_loss_formula/Diffusion_300b_1e_1b_difflm)] diffusion
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/diffusion_loss_formula/MaskGIT_300b_1e_1b_difflm)] maskgit
   - Batch size transferability from AR models to DLMs
     - 256
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size1/256_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size2/256_96b_1e_1b_difflm)] DLM
     - 1024
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size1/1024_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size2/1024_96b_1e_1b_difflm)] DLM
     - 4096
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size1/4096_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/batch_size2/4096_96b_1e_1b_difflm)] DLM
   - Learning rate transferability from AR models to DLMs
     - 1e-4
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate1/1e4_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate2/1e4_96b_1e_1b_difflm)] DLM
     - 2e-4
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate1/2e4_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate2/2e4_96b_1e_1b_difflm)] DLM
     - 4e-4
-      - [[ckpt]()][[log]()] AR
-      - [[ckpt]()][[log]()] DLM
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate1/4e4_96b_1e_1b_ar)] AR
+      - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/learning_rate2/4e4_96b_1e_1b_difflm)] DLM
   - The impact of weight decay on AR models in single epoch scenarios
-    - [[ckpt]()][[log]()] with
-    - [[ckpt]()][[log]()] without
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay3/with_96b_1e_1b_ar)] with
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay3/without_96b_1e_1b_ar)] without
   - The impact of weight decay on DLMs in single epoch scenarios
-    - [[ckpt]()][[log]()] with
-    - [[ckpt]()][[log]()] without
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay4/with_96b_1e_1b_difflm)] with
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay4/without_96b_1e_1b_difflm)] without
   - The impact of weight decay on AR models in multi-epoch scenarios
-    - [[ckpt]()][[log]()] with
-    - [[ckpt]()][[log]()] without
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay1/with_1b_96e_1b_ar)] with
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay1/without_1b_96e_1b_ar)] without
   - The impact of weight decay on DLMs in multi-epoch scenarios
-    - [[ckpt]()][[log]()] with
-    - [[ckpt]()][[log]()] without
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay2/with_1b_96e_1b_difflm)] with
+    - [[ckpt]()][[log](https://huggingface.co/datasets/MDGA-1/quokka_logs/tree/main/weight_decay2/without_1b_96e_1b_difflm)] without
 
 You can refer to [this](https://github.com/JinjieNi/MegaDLMs/blob/main/examples/dlm_generation/dlm_inference.py) script to generate with the huggingface checkpoints. Due to the large amount, most small checkpoints above are still in megatron formats. You may refer to [this](https://github.com/JinjieNi/MegaDLMs/blob/main/examples/dlm_training/ckpt_conversion.sh) script to convert them (need to tweak the conversion scripts).
 
