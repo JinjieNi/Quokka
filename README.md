@@ -15,7 +15,7 @@
 
 <h4>Large-Scale Scaling Laws for Diffusion Language Models.</h4>
 
-[![Static Badge](https://img.shields.io/badge/Paper-2025--09--30-darkcyan)](https://jinjieni.github.io/Quokka/resources/pdfs/Training_Optimal_Large_Diffusion_Language_Models.pdf)
+[![Static Badge](https://img.shields.io/badge/Paper-arXiv-darkcyan)](https://arxiv.org/abs/2510.03280)
 [![Static Badge](https://img.shields.io/badge/Resources-ckpts--logs-green)](#resources)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973031493707645146)
 
