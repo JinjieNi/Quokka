@@ -15,7 +15,8 @@
 
 <h4>Large-Scale Scaling Laws for Diffusion Language Models.</h4>
 
-[![Static Badge](https://img.shields.io/badge/Paper-arXiv-darkcyan)](https://arxiv.org/abs/2510.03280)
+[![Static Badge](https://img.shields.io/badge/Paper-arXiv-darkred)](https://arxiv.org/abs/2510.03280)
+[![Static Badge](https://img.shields.io/badge/Infra-training--backend-black)](https://github.com/JinjieNi/MegaDLMs)
 [![Static Badge](https://img.shields.io/badge/Resources-ckpts--logs-green)](#resources)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=tweet)](https://x.com/NiJinjie/status/1973031493707645146)
 
